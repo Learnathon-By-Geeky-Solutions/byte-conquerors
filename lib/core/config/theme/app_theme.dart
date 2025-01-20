@@ -3,12 +3,12 @@ import 'package:soul_space/core/config/theme/app_colors.dart';
 
 class AppTheme {
   static final lightTheme = ThemeData(
-    primaryColor: AppColors.primaryGreen,
+    primaryColor: AppColors.primaryPurple,
     scaffoldBackgroundColor: AppColors.lightBackGround,
     brightness: Brightness.light,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryGreen,
+        backgroundColor: AppColors.primaryPurple,
         textStyle: const TextStyle(
           color: AppColors.fontWhite,
           fontSize: 20,
@@ -21,13 +21,13 @@ class AppTheme {
     ),
   );
   static final darkTheme = ThemeData(
-    primaryColor: AppColors.primaryGreen,
+    primaryColor: AppColors.primaryPurple,
     scaffoldBackgroundColor: AppColors.darkBackGround,
     brightness: Brightness.dark,
     fontFamily: 'Satoshi',
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryGreen,
+        backgroundColor: AppColors.primaryPurple,
         textStyle: const TextStyle(
           color: AppColors.fontWhite,
           fontSize: 20,

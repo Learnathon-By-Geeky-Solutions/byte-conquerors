@@ -13,11 +13,13 @@ class SplashBlob extends StatelessWidget {
     // final Size windowSize = MediaQuery.of(context).size;
     return SvgPicture.asset(
       AppVectors.splashBlob,
-    ).animate().scale(
-          delay: 500.ms,
-          duration: 1000.ms,
-          end: Offset(10, 10),
-          curve: Curves.easeOut,
+      width: 250.0,
+    )
+        .animate(delay: 500.ms)
+        .scale(duration: 1500.ms, curve: Curves.easeOut, end: Offset(10, 10))
+        .fadeOut(
+          delay: 1500.ms,
+          duration: 250.ms,
         );
   }
 }
