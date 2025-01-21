@@ -1,18 +1,25 @@
-import 'package:blobs/blobs.dart';
 import 'package:flutter/material.dart';
-import 'package:soul_space/core/config/theme/app_colors.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:soul_space/core/config/assets/app_vectors.dart';
 
 class SplashBlob extends StatelessWidget {
   const SplashBlob({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Blob.fromID(
-      id: ['3-7-742289'],
-      size: 400,
-      styles: BlobStyles(
-        color: AppColors.primaryGreen,
-      ),
-    );
+  Widget build(
+    BuildContext context,
+  ) {
+    // final Size windowSize = MediaQuery.of(context).size;
+    return SvgPicture.asset(
+      AppVectors.splashBlob,
+      width: 250.0,
+    )
+        .animate(delay: 500.ms)
+        .scale(duration: 1500.ms, curve: Curves.easeOut, end: Offset(10, 10))
+        .fadeOut(
+          delay: 1500.ms,
+          duration: 250.ms,
+        );
   }
 }
