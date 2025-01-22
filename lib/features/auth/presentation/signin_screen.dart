@@ -10,6 +10,7 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreenState extends State<SignInScreen> {
   final TextEditingController _mailTEController = TextEditingController();
+  final TextEditingController _passwordTEController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +19,16 @@ class _SignInScreenState extends State<SignInScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Center(
           child: Column(
+            spacing: 10,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('LogIn Screen'),
+              Text(
+                'LogIn Screen',
+                style: TextStyle(fontSize: 25),
+              ),
+              SizedBox(
+                height: 50,
+              ),
               ReusableTextFormField(
                 hintText: 'Enter your email',
                 controller: _mailTEController,
@@ -28,6 +36,21 @@ class _SignInScreenState extends State<SignInScreen> {
                 showLabelText: true,
                 onChanged: (_) {},
               ),
+              ReusableTextFormField(
+                hintText: 'Enter your password',
+                controller: _passwordTEController,
+                keyboardType: TextInputType.visiblePassword,
+                showLabelText: true,
+                onChanged: (_) {},
+              ),
+              SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Log In',
+                        style: TextStyle(color: Colors.white),
+                      )))
             ],
           ),
         ),

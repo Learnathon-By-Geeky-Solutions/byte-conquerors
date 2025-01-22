@@ -11,9 +11,9 @@ class ThemeManager {
     brightness: Brightness.light,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryPurple,
+        backgroundColor: Color(0xFF00B795),
         textStyle: const TextStyle(
-          color: AppColors.fontWhite,
+          color: Colors.white,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
@@ -93,9 +93,9 @@ class ThemeManager {
     fontFamily: 'Satoshi',
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryPurple,
+        backgroundColor: Color(0xFF00B795),
         textStyle: const TextStyle(
-          color: AppColors.fontWhite,
+          color: Colors.white,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
