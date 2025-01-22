@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:soul_space/core/config/assets/app_vectors.dart';
-import 'package:soul_space/features/onboarding/presentation/pages/onboarding_page.dart';
+import 'package:soul_space/features/auth/presentation/signin_screen.dart';
 
 class SplashLogo extends StatefulWidget {
   const SplashLogo({super.key});
@@ -40,9 +40,11 @@ class _SplashLogoState extends State<SplashLogo> {
 
   Future<void> redirect() async {
     await Future.delayed(Duration(milliseconds: 500));
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (BuildContext contwxt) => OnboardingPage()),
-    );
+    if (mounted) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (BuildContext context) => SignInScreen()),
+      );
+    }
   }
 }
