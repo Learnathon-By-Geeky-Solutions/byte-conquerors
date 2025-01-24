@@ -5,6 +5,27 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+        body: Column(
+      children: [
+        PageView.builder(itemBuilder: (itemBuilder, index) {
+          return Container(
+            child: Column(
+              children: [
+                Text('Onboarding Page $index'),
+                ElevatedButton(
+                  onPressed: () {
+                    if (index == 2) {
+                      Navigator.of(context).pushNamed('/home');
+                    }
+                  },
+                  child: const Text('Next'),
+                ),
+              ],
+            ),
+          );
+        }),
+      ],
+    ));
   }
 }

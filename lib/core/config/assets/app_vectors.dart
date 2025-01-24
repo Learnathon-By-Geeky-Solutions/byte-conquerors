@@ -1,4 +1,5 @@
 class AppVectors {
+  AppVectors._();
   static const basePath = 'assets/vectors/';
   static const format = '.svg';
 
