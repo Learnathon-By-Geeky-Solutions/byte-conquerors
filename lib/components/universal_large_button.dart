@@ -24,7 +24,7 @@ class _UniversalLargeButtonState extends State<UniversalLargeButton> {
           child: GestureDetector(
             onTap: () => widget.onTap!(),
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+              margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
               height: 50.0,
               decoration: BoxDecoration(
                 color: AppColors.primaryPurple,
