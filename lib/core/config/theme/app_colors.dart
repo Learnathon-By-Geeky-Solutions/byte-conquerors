@@ -11,4 +11,8 @@ class AppColors {
   static const darkContrast = Color(0xFF2E1E3C);
   static const lighFont = Color(0xFFEDE6F2);
   static const darkFont = Color(0xFF2E1E3C);
+  static const lightSecondaryFont = Color(0xFF836D8F);
+  static const darkSecondaryFont = Color(0xFF7A6073);
+  static const lightGreyFont = Color(0xFFA89BAA);
+  static const darkGreyFont = Color(0xFF75677A);
 }

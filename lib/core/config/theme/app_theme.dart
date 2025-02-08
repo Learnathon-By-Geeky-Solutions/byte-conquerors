@@ -19,7 +19,7 @@ class ThemeManager {
           fontWeight: FontWeight.bold,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(8.0),
         ),
       ),
     ),
@@ -57,28 +57,28 @@ class ThemeManager {
         fontWeight: FontWeight.w400,
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4.0),
+        borderRadius: BorderRadius.circular(8.0),
         borderSide: BorderSide(
           color: AppColors.primary,
           width: 1.0,
         ),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4.0),
+        borderRadius: BorderRadius.circular(8.0),
         borderSide: BorderSide(
           color: AppColors.primary,
           width: 1.0,
         ),
       ),
       errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4.0),
+        borderRadius: BorderRadius.circular(8.0),
         borderSide: BorderSide(
           color: Colors.red,
           width: 1.0,
         ),
       ),
       focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4.0),
+        borderRadius: BorderRadius.circular(8.0),
         borderSide: BorderSide(
           color: Colors.red.shade400,
           width: 1.0,
@@ -101,7 +101,7 @@ class ThemeManager {
           fontWeight: FontWeight.bold,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(8.0),
         ),
       ),
     ),
@@ -139,28 +139,28 @@ class ThemeManager {
         fontWeight: FontWeight.w400,
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4.0),
+        borderRadius: BorderRadius.circular(8.0),
         borderSide: BorderSide(
           color: AppColors.primary,
           width: 1.0,
         ),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4.0),
+        borderRadius: BorderRadius.circular(8.0),
         borderSide: BorderSide(
           color: AppColors.primary,
           width: 1.0,
         ),
       ),
       errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4.0),
+        borderRadius: BorderRadius.circular(8.0),
         borderSide: BorderSide(
           color: Colors.red,
           width: 1.0,
         ),
       ),
       focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4.0),
+        borderRadius: BorderRadius.circular(8.0),
         borderSide: BorderSide(
           color: Colors.red.shade400,
           width: 1.0,
