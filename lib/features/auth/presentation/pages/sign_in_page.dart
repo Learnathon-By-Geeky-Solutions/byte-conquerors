@@ -4,6 +4,7 @@ import 'package:soul_space/components/reusable_text_from_field_widget.dart';
 import 'package:soul_space/components/universal_large_button.dart';
 import 'package:soul_space/core/config/theme/app_colors.dart';
 import 'package:soul_space/features/auth/presentation/pages/sign_up_page.dart';
+import 'package:soul_space/features/profile/presentation/pages/additional_info_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -90,7 +91,14 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 UniversalLargeButton(
                   buttonText: "SIGN IN",
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AdditionalInfoPage(),
+                      ),
+                    );
+                  },
                 ),
                 Row(
                   children: [
