@@ -33,5 +33,6 @@ class MoodButton extends StatelessWidget {
       onPressed: () {},
       child: Text(mood),
     );
+    return const Placeholder();
   }
 }
