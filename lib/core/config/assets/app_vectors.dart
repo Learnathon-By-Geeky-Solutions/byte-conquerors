@@ -10,4 +10,5 @@ class AppVectors {
   static const sapiensStanding = '${basePath}sapiens-standing$format';
   static const sapiensCycling = '${basePath}sapiens-cycling$format';
   static const sapiensRunning = '${basePath}sapiens-running$format';
+  static const heroBackground = '${basePath}hero-background$format';
 }
