@@ -7,6 +7,7 @@ import 'package:soul_space/core/config/theme/app_colors.dart';
 import 'package:soul_space/features/auth/domain/repositories/auth_repository.dart';
 import 'package:soul_space/features/auth/presentation/pages/sign_up_page.dart';
 import 'package:soul_space/features/feature_name/presentation/pages/feature_page.dart';
+import 'package:soul_space/features/profile/presentation/pages/additional_info_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
