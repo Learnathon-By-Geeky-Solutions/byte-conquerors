@@ -3,53 +3,55 @@ import 'package:soul_space/components/outlined_icon_button.dart';
 import 'package:soul_space/components/reusable_text_from_field_widget.dart';
 import 'package:soul_space/components/universal_large_button.dart';
 import 'package:soul_space/core/config/theme/app_colors.dart';
-import 'package:soul_space/features/auth/presentation/pages/sign_in_page.dart';
+import 'package:soul_space/features/auth/presentation/pages/sign_up_page.dart';
 
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key});
+class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
 
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  State<SignInPage> createState() => _SignInPageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
-  final TextEditingController _nameTextController = TextEditingController();
+class _SignInPageState extends State<SignInPage> {
   final TextEditingController _mailTextController = TextEditingController();
   final TextEditingController _passWordTextontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 10,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Already have an account?",
-                style: TextStyle(
-                  color: AppColors.lightGreyFont,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignInPage()));
-                },
-                child: Text(
-                  "Sign In",
+        bottomNavigationBar: Container(
+          color: AppColors.lightBackground,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 10,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an account?",
                   style: TextStyle(
-                    color: AppColors.primary,
+                    color: AppColors.lightGreyFont,
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-              ),
-            ],
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignUpPage()));
+                  },
+                  child: Text(
+                    "Sign Up",
+                    style: TextStyle(
+                      color: AppColors.primary,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         body: Center(
@@ -64,7 +66,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 Row(
                   children: [
                     Text(
-                      "Sign Up",
+                      "Sign In",
                       style: TextStyle(
                         color: AppColors.primary,
                         fontSize: 24,
@@ -77,11 +79,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   height: 20,
                 ),
                 ReusableTextFormField(
-                  hintText: "Enter your name ",
-                  controller: _nameTextController,
-                  keyboardType: TextInputType.name,
-                ),
-                ReusableTextFormField(
                   hintText: "Enter your email ",
                   controller: _mailTextController,
                   keyboardType: TextInputType.emailAddress,
@@ -92,7 +89,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   keyboardType: TextInputType.visiblePassword,
                 ),
                 UniversalLargeButton(
-                  buttonText: "SIGN UP",
+                  buttonText: "SIGN IN",
                   onTap: () {},
                 ),
                 Row(
@@ -109,7 +106,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         vertical: 8.0,
                       ),
                       child: Text(
-                        "Or Sign Up with",
+                        "Or Sign In with",
                         style: TextStyle(
                           fontSize: 14,
                           color: AppColors.lightGreyFont,

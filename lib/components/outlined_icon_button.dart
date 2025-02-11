@@ -24,7 +24,7 @@ class OutlinedIconButton extends StatelessWidget {
           ),
           padding: EdgeInsets.symmetric(
             horizontal: 10.0,
-            vertical: 14.0,
+            vertical: 10.0,
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
