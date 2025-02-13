@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:soul_space/components/outlined_icon_button.dart';
 import 'package:soul_space/components/reusable_text_from_field_widget.dart';
 import 'package:soul_space/components/universal_large_button.dart';
 import 'package:soul_space/core/config/theme/app_colors.dart';
+import 'package:soul_space/features/auth/domain/repositories/auth_repository.dart';
 import 'package:soul_space/features/auth/presentation/pages/sign_in_page.dart';
+import 'package:soul_space/features/feature_name/presentation/pages/feature_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -16,6 +19,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController _nameTextController = TextEditingController();
   final TextEditingController _mailTextController = TextEditingController();
   final TextEditingController _passWordTextontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,10 +94,43 @@ class _SignUpPageState extends State<SignUpPage> {
                   hintText: "Enter your password ",
                   controller: _passWordTextontroller,
                   keyboardType: TextInputType.visiblePassword,
+                  isPassword: true,
                 ),
                 UniversalLargeButton(
                   buttonText: "SIGN UP",
-                  onTap: () {},
+                  onTap: () async {
+                    if (!GetUtils.isEmail(_mailTextController.text) ||
+                        _passWordTextontroller.text.length < 8) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            !GetUtils.isEmail(_mailTextController.text)
+                                ? 'Invalid email format'
+                                : 'Password must be at least 8 characters long',
+                          ),
+                        ),
+                      );
+                      return;
+                    }
+
+                    final message = await AuthServiceRepository().registration(
+                      email: _mailTextController.text,
+                      password: _passWordTextontroller.text,
+                    );
+
+                    if (message != null && message.contains('Success')) {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                            content: Text(message ??
+                                'Registration failed. Please try again.')),
+                      );
+                    }
+                  },
                 ),
                 Row(
                   children: [
