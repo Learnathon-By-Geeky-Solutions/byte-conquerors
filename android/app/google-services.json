@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1032403595608",
+    "project_id": "soul-space-38822",
+    "storage_bucket": "soul-space-38822.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032403595608:android:36c51089976de7bb4a752d",
+        "android_client_info": {
+          "package_name": "com.endbrackets.soul_space"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqUUdz79g84PYK89cdFHSlUsvRTyoltxc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
