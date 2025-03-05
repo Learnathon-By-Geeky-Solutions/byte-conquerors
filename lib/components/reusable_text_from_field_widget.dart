@@ -16,6 +16,7 @@ class ReusableTextFormField extends StatefulWidget {
     this.onTap,
     this.validator,
     this.autoValidateMode = AutovalidateMode.disabled,
+    this.isPassword = false,
   });
 
   final String hintText;
@@ -29,6 +30,7 @@ class ReusableTextFormField extends StatefulWidget {
   final VoidCallback? onTap;
   final String? Function(String?)? validator;
   final AutovalidateMode autoValidateMode;
+  final bool isPassword;
 
   @override
   State<ReusableTextFormField> createState() => _ReusableTextFormFieldState();
@@ -37,6 +39,7 @@ class ReusableTextFormField extends StatefulWidget {
 class _ReusableTextFormFieldState extends State<ReusableTextFormField> {
   late FocusNode _focusNode;
   final ValueNotifier<bool> _isFocusedNotifier = ValueNotifier(false);
+  bool _passwordVisible = false;
 
   @override
   void initState() {
@@ -45,6 +48,8 @@ class _ReusableTextFormFieldState extends State<ReusableTextFormField> {
     _focusNode.addListener(() {
       _isFocusedNotifier.value = _focusNode.hasFocus;
     });
+
+    _passwordVisible = !widget.isPassword;
   }
 
   @override
@@ -62,7 +67,8 @@ class _ReusableTextFormFieldState extends State<ReusableTextFormField> {
         return TextFormField(
           onTap: widget.onTap,
           readOnly: widget.readonly,
-          maxLines: widget.maxLines ?? 1,
+          maxLines: widget.isPassword ? 1 : widget.maxLines ?? 1,
+          obscureText: widget.isPassword && !_passwordVisible,
           cursorColor: AppColors.primary,
           onChanged: widget.onChanged,
           controller: widget.controller,
@@ -76,7 +82,7 @@ class _ReusableTextFormFieldState extends State<ReusableTextFormField> {
           },
           keyboardType: widget.keyboardType,
           autocorrect: false,
-          enableSuggestions: false,
+          enableSuggestions: !widget.isPassword,
           decoration: InputDecoration(
             labelText: !widget.showLabelText
                 ? null
@@ -85,6 +91,21 @@ class _ReusableTextFormFieldState extends State<ReusableTextFormField> {
                     : null,
             hintText: widget.hintText,
             alignLabelWithHint: widget.maxLines != null,
+            suffixIcon: widget.isPassword
+                ? IconButton(
+                    icon: Icon(
+                      _passwordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      color: AppColors.primary,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _passwordVisible = !_passwordVisible;
+                      });
+                    },
+                  )
+                : null,
           ),
           style: Theme.of(context).textTheme.bodyLarge,
         );
