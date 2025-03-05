@@ -16,7 +16,7 @@ class OnboardingStepPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
+      padding: const EdgeInsets.symmetric(vertical: 40.0),
       child: PageView.builder(
           itemCount: onboardingContent.length,
           itemBuilder: (context, index) {
@@ -34,7 +34,7 @@ class OnboardingStepPage extends StatelessWidget {
                 Text(
                   onboardingContent[index].title,
                   style: TextStyle(
-                    color: AppColors.primaryPurple,
+                    color: AppColors.primary,
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   ),
@@ -42,7 +42,6 @@ class OnboardingStepPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     vertical: 15.0,
-                    horizontal: 30.0,
                   ),
                   child: Text(
                     onboardingContent[index].description,

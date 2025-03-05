@@ -18,9 +18,7 @@ class PageIndicatorDot extends StatelessWidget {
       width: currentIndex == index ? 30.0 : 10.0,
       margin: EdgeInsets.only(right: 10.0),
       decoration: BoxDecoration(
-        color: currentIndex == index
-            ? AppColors.primaryPurple
-            : AppColors.purpleAccent,
+        color: currentIndex == index ? AppColors.primary : AppColors.secondary,
         borderRadius: BorderRadius.circular(5.0),
       ),
     );

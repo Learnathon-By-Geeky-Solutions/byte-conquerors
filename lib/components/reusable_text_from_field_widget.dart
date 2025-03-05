@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soul_space/core/config/theme/app_colors.dart';
 
 class ReusableTextFormField extends StatefulWidget {
   const ReusableTextFormField({
@@ -62,7 +63,7 @@ class _ReusableTextFormFieldState extends State<ReusableTextFormField> {
           onTap: widget.onTap,
           readOnly: widget.readonly,
           maxLines: widget.maxLines ?? 1,
-          cursorColor: Color(0xFF00B795),
+          cursorColor: AppColors.primary,
           onChanged: widget.onChanged,
           controller: widget.controller,
           focusNode: _focusNode,

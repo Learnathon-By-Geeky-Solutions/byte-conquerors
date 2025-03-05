@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:soul_space/core/config/assets/app_vectors.dart';
+import 'package:soul_space/core/config/assets/app_images.dart';
 import 'package:soul_space/features/splash_screen/viewmodel/splash_navigation.dart';
 
 class SplashLogo extends StatefulWidget {
@@ -14,8 +13,8 @@ class SplashLogo extends StatefulWidget {
 class _SplashLogoState extends State<SplashLogo> {
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      AppVectors.logoWhite,
+    return Image.asset(
+      AppImages.logoLight,
       width: 100,
     )
         .animate(
