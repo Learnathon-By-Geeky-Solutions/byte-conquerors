@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:soul_space/application/app_view2.dart';
 import 'package:soul_space/features/auth/data/repositories/auth_repository.dart';
@@ -19,7 +20,7 @@ class AppView extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) {
-            const apiKey = "AIzaSyCjAQMTrkzJEvYgcIXFWY-tHAAnRrbobqc";
+            final apiKey = dotenv.env['AI_API_KEY']!;
             final model =
                 GenerativeModel(model: 'gemini-1.5-pro', apiKey: apiKey);
             return ChatBloc(model);
