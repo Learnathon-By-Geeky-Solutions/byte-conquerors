@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soul_space/components/package_dependency_wrapper.dart';
 import 'package:soul_space/core/config/theme/app_colors.dart';
 import 'package:soul_space/core/utils/app_dimens.dart';
-import 'package:soul_space/features/feature_name/presentation/pages/feature_page.dart';
+import 'package:soul_space/features/feature_name/presentation/chat/screen/chat_page.dart';
+import 'package:soul_space/features/feature_name/presentation/home/pages/home_page.dart';
 import 'package:soul_space/gen/assets.gen.dart';
 
 class BottomNavScreen extends StatefulWidget {
@@ -22,7 +23,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   /// Screens list
   final List<Widget> _screens = const [
     HomeScreen(),
-    Placeholder(),
+    ChatPage(),
     HomeScreen(),
     Placeholder()
   ];
