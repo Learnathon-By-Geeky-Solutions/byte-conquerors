@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:soul_space/components/universal_large_button.dart';
-import 'package:soul_space/features/auth/presentation/pages/sign_up_page.dart';
+import 'package:soul_space/features/auth/presentation/signup/pages/sign_up_page.dart';
 import 'package:soul_space/features/onboarding/data/datasources/onboarding_content_list.dart';
 import 'package:soul_space/features/onboarding/domain/models/onboarding_content.dart';
 import 'package:soul_space/features/onboarding/presentation/pages/onboarding_step_page.dart';
