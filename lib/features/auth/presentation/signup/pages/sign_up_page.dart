@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soul_space/components/reusable_text_from_field_widget.dart';
 import 'package:soul_space/components/universal_large_button.dart';
-import 'package:soul_space/components/outlined_icon_button.dart';
 import 'package:soul_space/core/config/theme/app_colors.dart';
 import 'package:soul_space/features/auth/presentation/signin/pages/sign_in_page.dart';
 import 'package:soul_space/features/auth/presentation/signup/bloc/sign_up_bloc.dart';
 import 'package:soul_space/features/auth/presentation/signup/bloc/sign_up_event.dart';
 import 'package:soul_space/features/auth/presentation/signup/bloc/sign_up_state.dart';
-import 'package:soul_space/features/feature_name/presentation/pages/feature_page.dart';
+import 'package:soul_space/features/bottom_nav/bottom_nav_screen.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -56,7 +55,7 @@ class _SignUpPageState extends State<SignUpPage> {
           if (state is SignUpSuccess) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()),
+              MaterialPageRoute(builder: (context) => const BottomNavScreen()),
             );
           } else if (state is SignUpFailure) {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -128,43 +127,43 @@ class _SignUpPageState extends State<SignUpPage> {
                           },
                   ),
                   const SizedBox(height: 20),
-                  Row(
-                    children: [
-                      const Expanded(
-                        child: Divider(
-                            thickness: 2, color: AppColors.lightGreyFont),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 8.0, vertical: 8.0),
-                        child: Text("Or Sign Up with",
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: AppColors.lightGreyFont,
-                              fontWeight: FontWeight.w600,
-                            )),
-                      ),
-                      const Expanded(
-                        child: Divider(
-                            thickness: 2, color: AppColors.lightGreyFont),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      OutlinedIconButton(
-                        buttonText: "Google",
-                        buttionIcon: Icons.g_mobiledata_sharp,
-                        onTap: () {},
-                      ),
-                      const SizedBox(width: 10),
-                      OutlinedIconButton(
-                        buttonText: "Apple",
-                        buttionIcon: Icons.apple,
-                        onTap: () {},
-                      ),
-                    ],
-                  )
+                  // Row(
+                  //   children: [
+                  //     const Expanded(
+                  //       child: Divider(
+                  //           thickness: 2, color: AppColors.lightGreyFont),
+                  //     ),
+                  //     const Padding(
+                  //       padding: EdgeInsets.symmetric(
+                  //           horizontal: 8.0, vertical: 8.0),
+                  //       child: Text("Or Sign Up with",
+                  //           style: TextStyle(
+                  //             fontSize: 14,
+                  //             color: AppColors.lightGreyFont,
+                  //             fontWeight: FontWeight.w600,
+                  //           )),
+                  //     ),
+                  //     const Expanded(
+                  //       child: Divider(
+                  //           thickness: 2, color: AppColors.lightGreyFont),
+                  //     ),
+                  //   ],
+                  // ),
+                  // Row(
+                  //   children: [
+                  //     OutlinedIconButton(
+                  //       buttonText: "Google",
+                  //       buttionIcon: Icons.g_mobiledata_sharp,
+                  //       onTap: () {},
+                  //     ),
+                  //     const SizedBox(width: 10),
+                  //     OutlinedIconButton(
+                  //       buttonText: "Apple",
+                  //       buttionIcon: Icons.apple,
+                  //       onTap: () {},
+                  //     ),
+                  //   ],
+                  // )
                 ],
               ),
             ),
