@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soul_space/components/outlined_icon_button.dart';
 import 'package:soul_space/components/reusable_text_from_field_widget.dart';
 import 'package:soul_space/components/universal_large_button.dart';
 import 'package:soul_space/core/config/theme/app_colors.dart';
@@ -9,7 +8,7 @@ import 'package:soul_space/features/auth/presentation/signin/bloc/sign_in_bloc.d
 import 'package:soul_space/features/auth/presentation/signin/bloc/sign_in_event.dart';
 import 'package:soul_space/features/auth/presentation/signin/bloc/sign_in_state.dart';
 import 'package:soul_space/features/auth/presentation/signup/pages/sign_up_page.dart';
-import 'package:soul_space/features/feature_name/presentation/pages/feature_page.dart';
+import 'package:soul_space/features/bottom_nav/bottom_nav_screen.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -40,7 +39,7 @@ class _SignInPageState extends State<SignInPage> {
             );
           } else if (state is SignInSuccess) {
             Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (_) => const HomeScreen()),
+              MaterialPageRoute(builder: (_) => const BottomNavScreen()),
             );
           }
         },
@@ -116,9 +115,9 @@ class _SignInPageState extends State<SignInPage> {
                       },
                     ),
                     const SizedBox(height: 20),
-                    _buildDivider(),
-                    const SizedBox(height: 10),
-                    _buildSocialButtons()
+                    // _buildDivider(),
+                    // const SizedBox(height: 10),
+                    // _buildSocialButtons()
                   ],
                 ),
               ),
@@ -165,45 +164,45 @@ class _SignInPageState extends State<SignInPage> {
     );
   }
 
-  Widget _buildDivider() {
-    return Row(
-      children: [
-        const Expanded(
-          child: Divider(thickness: 2, color: AppColors.lightGreyFont),
-        ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text(
-            "Or Sign In with",
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.lightGreyFont,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
-        const Expanded(
-          child: Divider(thickness: 2, color: AppColors.lightGreyFont),
-        )
-      ],
-    );
-  }
+// Widget _buildDivider() {
+//   return Row(
+//     children: [
+//       const Expanded(
+//         child: Divider(thickness: 2, color: AppColors.lightGreyFont),
+//       ),
+//       const Padding(
+//         padding: EdgeInsets.symmetric(horizontal: 8.0),
+//         child: Text(
+//           "Or Sign In with",
+//           style: TextStyle(
+//             fontSize: 14,
+//             color: AppColors.lightGreyFont,
+//             fontWeight: FontWeight.w600,
+//           ),
+//         ),
+//       ),
+//       const Expanded(
+//         child: Divider(thickness: 2, color: AppColors.lightGreyFont),
+//       )
+//     ],
+//   );
+// }
 
-  Widget _buildSocialButtons() {
-    return Row(
-      children: [
-        OutlinedIconButton(
-          buttonText: "Google",
-          buttionIcon: Icons.g_mobiledata_sharp,
-          onTap: () {},
-        ),
-        const SizedBox(width: 10),
-        OutlinedIconButton(
-          buttonText: "Apple",
-          buttionIcon: Icons.apple,
-          onTap: () {},
-        ),
-      ],
-    );
-  }
+// Widget _buildSocialButtons() {
+//   return Row(
+//     children: [
+//       OutlinedIconButton(
+//         buttonText: "Google",
+//         buttionIcon: Icons.g_mobiledata_sharp,
+//         onTap: () {},
+//       ),
+//       const SizedBox(width: 10),
+//       OutlinedIconButton(
+//         buttonText: "Apple",
+//         buttionIcon: Icons.apple,
+//         onTap: () {},
+//       ),
+//     ],
+//   );
+// }
 }
