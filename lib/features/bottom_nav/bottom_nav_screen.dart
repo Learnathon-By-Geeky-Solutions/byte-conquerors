@@ -21,7 +21,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   int _currentIndex = 0;
 
   /// Screens list
-  final List<Widget> _screens = const [
+  final List<Widget> _screens = [
     HomeScreen(),
     ChatPage(),
     HomeScreen(),
