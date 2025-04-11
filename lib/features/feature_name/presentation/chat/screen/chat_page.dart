@@ -102,7 +102,7 @@ class _ChatPageState extends State<ChatPage> {
               // Custom AppBar
               Container(
                 height: kToolbarHeight + 12,
-                padding: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.only(top: 22),
                 width: double.infinity,
                 color: AppColors.primaryColor,
                 alignment: Alignment.center,
