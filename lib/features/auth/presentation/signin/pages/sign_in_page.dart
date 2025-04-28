@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soul_space/components/reusable_text_from_field_widget.dart';
 import 'package:soul_space/components/universal_large_button.dart';
 import 'package:soul_space/core/config/theme/app_colors.dart';
+import 'package:soul_space/features/additional_info/presentation/pages/additional_info_page.dart';
 import 'package:soul_space/features/auth/data/repositories/auth_repository.dart';
 import 'package:soul_space/features/auth/presentation/signin/bloc/sign_in_bloc.dart';
 import 'package:soul_space/features/auth/presentation/signin/bloc/sign_in_event.dart';
 import 'package:soul_space/features/auth/presentation/signin/bloc/sign_in_state.dart';
 import 'package:soul_space/features/auth/presentation/signup/pages/sign_up_page.dart';
-import 'package:soul_space/features/bottom_nav/bottom_nav_screen.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -39,7 +39,7 @@ class _SignInPageState extends State<SignInPage> {
             );
           } else if (state is SignInSuccess) {
             Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (_) => const BottomNavScreen()),
+              MaterialPageRoute(builder: (_) => const AdditionalInfoPage()),
             );
           }
         },
