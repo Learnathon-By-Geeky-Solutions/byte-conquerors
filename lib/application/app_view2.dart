@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soul_space/features/splash_screen/presentation/pages/splash_page.dart';
+import 'package:soul_space/generated/l10n.dart';
 
 class SoulSpaceApp extends StatelessWidget {
   const SoulSpaceApp({super.key});
@@ -18,10 +19,12 @@ class SoulSpaceApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             localizationsDelegates: [
+              S.delegate,
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
+            supportedLocales: S.supportedLocales,
             home: const SplashPage(),
           );
         });
