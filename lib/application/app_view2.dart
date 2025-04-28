@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:soul_space/core/config/theme/app_theme.dart';
 import 'package:soul_space/features/splash_screen/presentation/pages/splash_page.dart';
 
 class SoulSpaceApp extends StatelessWidget {
@@ -17,7 +17,11 @@ class SoulSpaceApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeManager.lightTheme,
+            localizationsDelegates: [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
             home: const SplashPage(),
           );
         });

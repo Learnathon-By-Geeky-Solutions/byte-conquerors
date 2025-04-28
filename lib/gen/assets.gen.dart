@@ -35,14 +35,14 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<String> get values => [
-    navChatSelected,
-    navHomeSelected,
-    navHomeUnselected,
-    navNewsSelected,
-    navNewsUnselected,
-    navProfileSelected,
-    navProfileUnselected,
-  ];
+        navChatSelected,
+        navHomeSelected,
+        navHomeUnselected,
+        navNewsSelected,
+        navNewsUnselected,
+        navProfileSelected,
+        navProfileUnselected,
+      ];
 }
 
 class $AssetsImagesGen {
@@ -66,11 +66,11 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-    iconLogoLight,
-    iconLogoPrimary,
-    logoLight,
-    logoPrimary,
-  ];
+        iconLogoLight,
+        iconLogoPrimary,
+        logoLight,
+        logoPrimary,
+      ];
 }
 
 class $AssetsVectorsGen {
@@ -102,23 +102,27 @@ class $AssetsVectorsGen {
 
   /// List of all assets
   List<String> get values => [
-    heroBackground,
-    logoBlack,
-    logoPurple,
-    logoWhite,
-    sapiensCycling,
-    sapiensRunning,
-    sapiensStanding,
-    splashBlob,
-  ];
+        heroBackground,
+        logoBlack,
+        logoPurple,
+        logoWhite,
+        sapiensCycling,
+        sapiensRunning,
+        sapiensStanding,
+        splashBlob,
+      ];
 }
 
 class Assets {
   const Assets._();
 
+  static const String aEnv = '.env';
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsVectorsGen vectors = $AssetsVectorsGen();
+
+  /// List of all assets
+  static List<String> get values => [aEnv];
 }
 
 class AssetGenImage {
