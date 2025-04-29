@@ -20,7 +20,6 @@ class AppColors {
 
   static const MaterialColor neutralColor = MaterialColor(
     0xFF64748B,
-    // 0% comes in here, this will be color picked if no shade is selected when defining a Color property which doesn’t require a swatch.
     <int, Color>{
       50: Color(0xFFF8FAFC), //10%
       100: Color(0xFFF1F5F9), //20%

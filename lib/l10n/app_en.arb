@@ -1,0 +1,14 @@
+{
+  "appName": "Soul Space",
+  "welcomeMessage": "Welcome to Soul Space!",
+  "chooseMood": "How are you feeling today?",
+  "@appName": {
+    "description": "Application name"
+  },
+  "@welcomeMessage": {
+    "description": "Welcome message on home screen"
+  },
+  "@chooseMood": {
+    "description": "Mood selection prompt"
+  }
+}

@@ -10,6 +10,16 @@ class AuthServiceRepository {
         email: email,
         password: password,
       );
+
+      // String uid = userCredential.user!.uid;
+
+      // // Store additional user info in Firestore
+      // await _firestore.collection('users').doc(uid).set({
+      //   'name': name,
+      //   'email': email,
+      //   'createdAt': FieldValue.serverTimestamp(),
+      // });
+
       return 'Success';
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
