@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:soul_space/application/navigation/presentation/main_screen.dart';
 import 'package:soul_space/components/rounded_icon_button.dart';
 import 'package:soul_space/features/additional_info/data/datasources/choose_additional_info.dart';
-import 'package:soul_space/features/bottom_nav/bottom_nav_screen.dart';
 
 class AdditionalInfoPage extends StatefulWidget {
   const AdditionalInfoPage({super.key});
@@ -55,7 +55,7 @@ class _AdditionalInfoPageState extends State<AdditionalInfoPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => BottomNavScreen(),
+                          builder: (context) => MainScreen(),
                         ),
                       );
                     }

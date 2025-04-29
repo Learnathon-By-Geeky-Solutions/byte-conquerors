@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soul_space/features/homepage/presentation/widgets/phq9_score_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -72,6 +73,9 @@ class HomeScreen extends StatelessWidget {
             style: TextStyle(
                 fontWeight: FontWeight.w600, fontSize: 16, color: Colors.black),
           ),
+          const SizedBox(height: 20),
+
+          Phq9ScoreWidget(),
           const SizedBox(height: 20),
 
           // Featured Card
