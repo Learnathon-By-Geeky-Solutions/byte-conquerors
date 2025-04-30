@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:soul_space/core/config/theme/app_colors.dart';
+import 'package:soul_space/features/homepage/presentation/widgets/featured_view.dart';
 import 'package:soul_space/features/homepage/presentation/widgets/phq9_score_card.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
 
           const Text(
             'How are you feeling ?',
-            style: TextStyle(fontSize: 16, color: Colors.grey),
+            style: TextStyle(fontSize: 16, color: AppColors.darkFont),
           ),
           const SizedBox(height: 15),
 
@@ -48,7 +49,7 @@ class HomeScreen extends StatelessWidget {
               (index) => CircleAvatar(
                 radius: 26,
                 backgroundColor: selectedIndex == index
-                    ? ThemeData().primaryColor
+                    ? AppColors.primary
                     : Colors.grey.shade200,
                 child: Text(
                   moods[index],
@@ -69,7 +70,9 @@ class HomeScreen extends StatelessWidget {
           const Text(
             'For your mood',
             style: TextStyle(
-                fontWeight: FontWeight.w600, fontSize: 16, color: Colors.black),
+                fontWeight: FontWeight.w600,
+                fontSize: 16,
+                color: AppColors.darkFont),
           ),
           const SizedBox(height: 20),
 
@@ -122,7 +125,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: ThemeData().primaryColor,
+              color: AppColors.primary,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
@@ -141,7 +144,7 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   'The first step toward change is awareness. The second step is acceptance.',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.lighFont,
                     fontSize: 15,
                     height: 1.4,
                   ),
@@ -154,6 +157,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+          FeaturedSleepView(),
         ],
       ),
     );

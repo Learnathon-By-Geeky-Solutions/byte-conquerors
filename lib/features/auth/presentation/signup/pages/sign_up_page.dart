@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soul_space/components/reusable_text_from_field_widget.dart';
 import 'package:soul_space/components/universal_large_button.dart';
 import 'package:soul_space/core/config/theme/app_colors.dart';
+import 'package:soul_space/features/additional_info/presentation/pages/additional_info_page.dart';
 import 'package:soul_space/features/auth/presentation/signin/pages/sign_in_page.dart';
 import 'package:soul_space/features/auth/presentation/signup/bloc/sign_up_bloc.dart';
 import 'package:soul_space/features/auth/presentation/signup/bloc/sign_up_event.dart';
 import 'package:soul_space/features/auth/presentation/signup/bloc/sign_up_state.dart';
-import 'package:soul_space/features/user_profile/presentation/screens/user_profile_screen.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -55,8 +55,7 @@ class _SignUpPageState extends State<SignUpPage> {
           if (state is SignUpSuccess) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(
-                  builder: (context) => const UserProfileScreen()),
+              MaterialPageRoute(builder: (context) => AdditionalInfoPage()),
             );
           } else if (state is SignUpFailure) {
             ScaffoldMessenger.of(context).showSnackBar(

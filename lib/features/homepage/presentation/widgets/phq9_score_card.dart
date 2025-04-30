@@ -49,7 +49,7 @@ class _Phq9ScoreWidgetState extends State<Phq9ScoreWidget> {
       width: double.infinity,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: ThemeData.light().colorScheme.primary,
+        color: AppColors.primary,
         borderRadius: BorderRadius.circular(12),
       ),
       child: _score != null

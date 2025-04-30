@@ -4,7 +4,6 @@ import 'package:soul_space/features/auth/presentation/signup/pages/sign_up_page.
 import 'package:soul_space/features/onboarding/data/datasources/onboarding_content_list.dart';
 import 'package:soul_space/features/onboarding/domain/models/onboarding_content.dart';
 import 'package:soul_space/features/onboarding/presentation/pages/onboarding_step_page.dart';
-import 'package:soul_space/features/onboarding/presentation/widgets/page_indicator.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -26,10 +25,6 @@ class OnboardingPage extends StatelessWidget {
                 currentIndex: currentIndex,
                 onboardingContent: onboardingContent,
               ),
-            ),
-            PageIndicator(
-              onboardingContent: onboardingContent,
-              currentIndex: currentIndex,
             ),
             UniversalLargeButton(
               buttonText: 'Get Started',
