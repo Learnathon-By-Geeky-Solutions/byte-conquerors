@@ -55,8 +55,7 @@ class _SignUpPageState extends State<SignUpPage> {
           if (state is SignUpSuccess) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(
-                  builder: (context) => const AdditionalInfoPage()),
+              MaterialPageRoute(builder: (context) => AdditionalInfoPage()),
             );
           } else if (state is SignUpFailure) {
             ScaffoldMessenger.of(context).showSnackBar(

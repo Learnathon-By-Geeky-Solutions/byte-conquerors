@@ -39,7 +39,7 @@ class _SignInPageState extends State<SignInPage> {
             );
           } else if (state is SignInSuccess) {
             Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (_) => const AdditionalInfoPage()),
+              MaterialPageRoute(builder: (_) => AdditionalInfoPage()),
             );
           }
         },

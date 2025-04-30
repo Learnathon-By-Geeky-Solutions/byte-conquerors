@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:soul_space/application/navigation/bloc/navigation_bloc.dart';
 import 'package:soul_space/application/navigation/bloc/navigation_event.dart';
 import 'package:soul_space/application/navigation/bloc/navigation_state.dart';
+import 'package:soul_space/core/config/theme/app_colors.dart';
 
 class BottomNav extends StatelessWidget {
   const BottomNav({super.key});
@@ -15,9 +16,8 @@ class BottomNav extends StatelessWidget {
           currentIndex: state.selectedIndex,
           onTap: (index) =>
               context.read<NavigationBloc>().add(NavigateTo(index)),
-          backgroundColor: const Color(0xFFEDE6F2),
-          selectedItemColor: const Color(0xFF4B2E5D),
-          unselectedItemColor: const Color(0xFF836D8F),
+          selectedItemColor: AppColors.primary,
+          unselectedItemColor: AppColors.secondary,
           type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(
@@ -33,8 +33,8 @@ class BottomNav extends StatelessWidget {
               label: 'Journal',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
+              icon: Icon(Icons.chat),
+              label: 'Chat',
             ),
           ],
         );
