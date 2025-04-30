@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soul_space/core/config/theme/app_colors.dart';
 import 'package:soul_space/features/phq9_assessment/data/datasources/phq9_firebase_service.dart';
 
 class Phq9ScoreWidget extends StatefulWidget {
@@ -47,32 +48,45 @@ class _Phq9ScoreWidgetState extends State<Phq9ScoreWidget> {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(20),
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.deepPurple[50],
+        color: ThemeData.light().colorScheme.primary,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.deepPurple, width: 1),
       ),
       child: _score != null
           ? Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   'Your Last PHQ-9 Score',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: ThemeData().textTheme.labelLarge?.copyWith(
+                        fontSize: 18,
+                        color: AppColors.lighFont,
+                      ),
                 ),
                 const SizedBox(height: 10),
                 Text(
                   'Score: $_score',
-                  style: const TextStyle(fontSize: 16),
+                  style: ThemeData().textTheme.bodySmall?.copyWith(
+                        fontSize: 14,
+                        color: AppColors.lighFont,
+                      ),
                 ),
                 Text(
                   'Severity: $_severity',
-                  style: const TextStyle(fontSize: 16),
+                  style: ThemeData().textTheme.bodySmall?.copyWith(
+                        fontSize: 14,
+                        color: AppColors.lighFont,
+                      ),
                 ),
               ],
             )
-          : const Text('No score data found. Start your first assessment.'),
+          : Text(
+              'No score data found. Start your first assessment.',
+              style: ThemeData().textTheme.bodyMedium?.copyWith(
+                    fontSize: 18,
+                    color: AppColors.lighFont,
+                  ),
+            ),
     );
   }
 }

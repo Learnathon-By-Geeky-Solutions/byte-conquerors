@@ -10,6 +10,9 @@ import 'package:soul_space/features/auth/presentation/signup/bloc/sign_up_bloc.d
 import 'package:soul_space/features/gemini_prompts/data/repositories/gemini_repository.dart';
 import 'package:soul_space/features/gemini_prompts/presentation/bloc/gemini_bloc.dart';
 import 'package:soul_space/features/phq9_assessment/presentation/bloc/phq9_bloc.dart';
+import 'package:soul_space/features/user_profile/domain/usecases/get_user_profile.dart';
+import 'package:soul_space/features/user_profile/domain/usecases/save_user_profile.dart';
+import 'package:soul_space/features/user_profile/presentation/bloc/user_profile_bloc.dart';
 
 class AppView extends StatelessWidget {
   const AppView({super.key});
@@ -20,6 +23,12 @@ class AppView extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => Phq9Bloc(),
+        ),
+        BlocProvider(
+          create: (context) => UserProfileBloc(
+            saveUserProfile: SaveUserProfile(),
+            getUserProfile: GetUserProfile(),
+          ),
         ),
         BlocProvider(
           create: (context) => NavigationBloc(),

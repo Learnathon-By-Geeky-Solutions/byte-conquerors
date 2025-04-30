@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:soul_space/core/config/theme/app_colors.dart';
+import 'package:soul_space/core/config/theme/text_theme.dart';
 
 class ThemeManager {
   ThemeManager._();
 
   static final lightTheme = ThemeData(
+    textTheme: CustomTextTheme.lightText,
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: AppColors.lightBackground,
     brightness: Brightness.light,
@@ -88,6 +90,7 @@ class ThemeManager {
   );
 
   static final darkTheme = ThemeData(
+    textTheme: CustomTextTheme.darkText,
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: AppColors.darkBackGround,
     brightness: Brightness.dark,

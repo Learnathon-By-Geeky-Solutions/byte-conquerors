@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soul_space/core/config/theme/app_colors.dart';
 import 'package:soul_space/features/homepage/presentation/widgets/phq9_score_card.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,21 +20,11 @@ class HomeScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Hello,',
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w400)),
-                  Text('Michael',
-                      style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black)),
-                ],
-              ),
+              Text('Hello,',
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400)),
               CircleAvatar(
                 backgroundColor: Colors.yellow[100],
                 radius: 24,
@@ -57,25 +48,29 @@ class HomeScreen extends StatelessWidget {
               (index) => CircleAvatar(
                 radius: 26,
                 backgroundColor: selectedIndex == index
-                    ? Colors.green
+                    ? ThemeData().primaryColor
                     : Colors.grey.shade200,
                 child: Text(
                   moods[index],
-                  style: const TextStyle(fontSize: 22),
+                  style: ThemeData().textTheme.labelMedium?.copyWith(
+                        color: selectedIndex == index
+                            ? Colors.white
+                            : Colors.black,
+                        fontSize: 24,
+                      ),
                 ),
               ),
             ),
           ),
           const SizedBox(height: 25),
+          Phq9ScoreWidget(),
+          const SizedBox(height: 20),
 
           const Text(
             'For your mood',
             style: TextStyle(
                 fontWeight: FontWeight.w600, fontSize: 16, color: Colors.black),
           ),
-          const SizedBox(height: 20),
-
-          Phq9ScoreWidget(),
           const SizedBox(height: 20),
 
           // Featured Card
@@ -113,9 +108,9 @@ class HomeScreen extends StatelessWidget {
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 6),
-          const Row(
+          Row(
             children: [
-              Icon(Icons.star, size: 16, color: Colors.amber),
+              Icon(Icons.star, size: 16, color: AppColors.secondaryColor),
               SizedBox(width: 4),
               Text('4.5  Scott & Shanice',
                   style: TextStyle(color: Colors.grey)),
@@ -127,18 +122,20 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: Colors.green,
+              color: ThemeData().primaryColor,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'NATHANIEL BRANDEN',
-                  style: TextStyle(
-                      color: Colors.white70,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1),
+                  style: ThemeData().textTheme.labelMedium?.copyWith(
+                        fontSize: 12,
+                        color: Colors.white70,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1,
+                      ),
                 ),
                 SizedBox(height: 10),
                 Text(

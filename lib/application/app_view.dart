@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:soul_space/application/app_start/bloc/app_start_bloc.dart';
 import 'package:soul_space/application/navigation/presentation/main_screen.dart';
+import 'package:soul_space/core/config/theme/app_size.dart';
 import 'package:soul_space/core/config/theme/app_theme.dart';
 import 'package:soul_space/features/auth/presentation/signin/pages/sign_in_page.dart';
 import 'package:soul_space/features/onboarding/presentation/pages/onboarding_page.dart';
@@ -12,6 +13,7 @@ class SoulSpaceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppSize.init(context);
     return ScreenUtilInit(
         designSize: MediaQuery.of(context).size.width > 600
             ? const Size(834, 1194) // Tablet design size
